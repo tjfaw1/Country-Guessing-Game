@@ -1,0 +1,79 @@
+body {
+  font-family: system-ui;
+  color: #555;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url("https://images.unsplash.com/photo-1592487501226-7ed5e5dc80f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"); */
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid red;
+  padding: 24px;
+  width: 80vw;
+  height: 80vh;
+}
+
+.container h1 {
+  color: hotpink;
+  font-size: 7vh;
+  text-align: center;
+}
+
+.accordion {
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.accordion-label, .accordion-content {
+    padding: 14px 20px;
+}
+
+.accordion-label{
+    display: block;
+    color: hotpink;
+    font-size: 1.8em;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+    padding-left: 6px;
+}
+
+.accordion-label:hover{
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+.accordion-content{
+    background: white;
+    line-height: 1.6;
+    font-size: 1.4em;
+    display: none;
+}
+
+.accordion-input{
+    display: none;
+}
+
+.accordion-input:checked ~ .accordion-content{
+    display: block;
+}
+
+.btt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro button {
+  padding: 15px;
+  min-width: 60%;
+  text-align: center;
+}
