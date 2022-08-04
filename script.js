@@ -16,19 +16,19 @@ const getRandomCountryWithData = function () {
     .then(function (data) {
       console.log(data[0].name.common);
       const html = `
-        <div class="population">
+        <div class="population" id="country-snippet">
           Population: ${(+data[0].population/1000000).toFixed(1) + ' million'}
         </div>
-        <div class="size">
-          Country Land Size: ${Number(data[0].area).toLocaleString() + ' km²'}
+        <div class="size" id="country-snippet">
+          Land Size: ${Number(data[0].area).toLocaleString() + ' km²'}
         </div>
-        <div class="continent">
+        <div class="continent" id="country-snippet">
           Continent: ${data[0].continents[0]}
         </div>
-        <div class="capital">
+        <div class="capital" id="country-snippet">
           Capital City: ${data[0].capital[0]}
         </div>
-        <div class="flag">
+        <div class="flag" id="country-snippet">
           <div class="flag-container">
             <img src="${data[0].flags.png}" alt="" style="height: 120px; width: 200px;">
           </div>

@@ -50,13 +50,21 @@ body {
 
 .country-card {
   border: 3px solid black;
-  width: fit-content;
+  width: 100%;
   margin: 12px 0;
   /* opacity: 0; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#country-snippet {
+  margin: 3%;
 }
 
 .content {
   border: 4px solid red;
+  width: 100%;
   /* opacity: 0; */
 }
 
