@@ -13,7 +13,8 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  /* justify-content: space-evenly; */
+  padding: 2.5% 0;
+  /* justify-content: space-between; */
   border: 3px solid aqua;
   /* padding: 24px; */
   width: 100vw;
@@ -66,18 +67,24 @@ body {
 }
 
 .scores {
-  margin: 4%;
-  padding: 2%;
+  margin: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .score {
-  border: 2px solid darkblue;
-  width: 100%;
+  width: fit-content;
   margin: 12px;
+  text-align: center;
+  color: hotpink;
+  border: 2px solid hotpink;
+  border-radius: 33px;
+  font-size: small;
+  padding: 5px 15px;
+  min-width: 10%;
+  background-color: #EFEFEF;
 }
 
 

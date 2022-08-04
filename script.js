@@ -20,7 +20,7 @@ const getRandomCountryWithData = function () {
           Population: ${(+data[0].population/1000000).toFixed(1) + ' million'}
         </div>
         <div class="size">
-          Country Land Size: ${(+data[0].area) + ' km²'}
+          Country Land Size: ${Number(data[0].area).toLocaleString() + ' km²'}
         </div>
         <div class="continent">
           Continent: ${data[0].continents[0]}
