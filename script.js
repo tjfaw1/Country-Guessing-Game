@@ -1,5 +1,6 @@
 'use strict';
-const countriesCard = document.querySelector('country-card');
+const countriesCard = document.querySelector('.country-card');
+const introBox = document.querySelector('.intro');
 const getRandomCountryWithData = function () {
   fetch('https://restcountries.com/v3.1/all')
     .then(response => response.json())
@@ -13,15 +14,37 @@ const getRandomCountryWithData = function () {
     })
     .then(response => response.json())
     .then(function (data) {
-      const result = {
-      name: data[0].name.common,
-      size: data[0].area,
-      population: data[0].population,
-      continent: data[0].continents[0],
-      flag: data[0].flags.png
-      };
-      console.log(result);
-      // return result;
+      console.log(data[0].name.common);
+      const html = `
+        <div class="population">
+          Population: ${(+data[0].population/1000000).toFixed(1) + ' million'}
+        </div>
+        <div class="size">
+          Country Land Size: ${(+data[0].area) + ' km²'}
+        </div>
+        <div class="continent">
+          Continent: ${data[0].continents[0]}
+        </div>
+        <div class="capital">
+          Capital City: ${data[0].capital[0]}
+        </div>
+        <div class="flag">
+          <div class="flag-container">
+            <img src="${data[0].flags.png}" alt="" style="height: 120px; width: 200px;">
+          </div>
+        </div>
+      `;
+      countriesCard.insertAdjacentHTML('beforeend', html);
+      // countriesCard.style.opacity = 1;
+
     })
 };
+
 getRandomCountryWithData();
+
+// const play = function () {
+//   getRandomCountryWithData();
+//   countriesCard.style.opacity = 1;
+// };
+
+// document.getElementById('play-btn').addEventListener('click', play);

@@ -12,8 +12,8 @@
 <body>
   <div class="container">
     <div class="intro">
-      <h1>Country Guessing Game</h1>
-      <div class="accordian">
+      <h1 id="intro-h1" style="border: 2px solid orange;">Country Guessing Game</h1>
+      <!-- <div class="accordian">
         <div>
           <input type="checkbox" id="section1" class="accordion-input">
           <label for="section1" class="accordion-label">Rules ¯\_(ツ)_/¯ </label>
@@ -25,34 +25,46 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="btt">
-        <button>Play Game</button>
+        <button id="play-btn">⁉ Rules ⁉</button>
+        <button id="play-btn">Play Game</button>
       </div>
+
     </div>
-     <div class="guess-box" style="border: 4px solid aqua; margin: 12px 0;">
-      <input type="text" class="guess-bar" placeholder="Guess the country">
-    </div>
-    <div class="results" style="border: 3px solid royalblue;">
-      Incorrect Guess: Try Again
-    </div>
-    <div class="country-card" style="border: 3px solid yellowgreen; width: fit-content; margin: 12px 0;">
-      <div class="population">
-        Population: 20 million
+    <div class="content">
+      <div class="guess-box" style="border: 4px solid aqua; margin: 12px 0;">
+        <input type="text" class="guess-bar" placeholder="Guess the country">
       </div>
-      <div class="size">
-        Country Land Size: 4 million
+      <div class="results" style="border: 3px solid yellowgreen;">
+        Incorrect Guess: Try Again
       </div>
-      <div class="continent">
-        Continent: Asia
-      </div>
-      <div class="capital">
-        Capital City: Canberra
-      </div>
-      <div class="flag">
-        <div class="flag-container">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="" style="height: 120px; width: 200px;">
+      <div class="country-card">
+        <!-- <div class="population">
+          Population: 20 million
         </div>
+        <div class="size">
+          Country Land Size: 4 million
+        </div>
+        <div class="continent">
+          Continent: Asia
+        </div>
+        <div class="capital">
+          Capital City: Canberra
+        </div>
+        <div class="flag">
+          <div class="flag-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" alt="" style="height: 120px; width: 200px;">
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="scores" style="border: 2px solid green;">
+      <div class="score" id="current-score">
+        Current Score:
+      </div>
+      <div class="score" id="high-score">
+        High-score:
       </div>
     </div>
   </div>
