@@ -4,7 +4,7 @@ const introBox = document.querySelector('.intro');
 const guess = document.querySelector('.guess-bar').value;
 const message = document.querySelector('.results').textContent;
 
-let randomCountry;
+let randomCountry = [];
 const getRandomCountryAndDataFromApi = function () {
   fetch('https://restcountries.com/v3.1/all')
     .then(response => response.json())
@@ -18,21 +18,26 @@ const getRandomCountryAndDataFromApi = function () {
     })
     .then(response => response.json())
     .then(function (data) {
-      randomCountry = data[0].name.common;
+      randomCountry.push(data[0].name.common);
+      randomCountry.push((+data[0].population/1000000).toFixed(2) + ' million');
+      randomCountry.push(Number(data[0].area).toLocaleString() + ' km²');
+      randomCountry.push(data[0].continents[0]);
+      randomCountry.push(data[0].capital[0]);
+      randomCountry.push(data[0].capital[0]);
       const html = `
-        <div class="population" id="country-snippet">
-          Population: ${(+data[0].population/1000000).toFixed(1) + ' million'}
+        <div class="population" id="country-snippet1">
+          Population: ${(+data[0].population/1000000).toFixed(2) + ' million'}
         </div>
-        <div class="size" id="country-snippet">
+        <div class="size" id="country-snippet2">
           Land Size: ${Number(data[0].area).toLocaleString() + ' km²'}
         </div>
-        <div class="continent" id="country-snippet">
+        <div class="continent" id="country-snippet3">
           Continent: ${data[0].continents[0]}
         </div>
-        <div class="capital" id="country-snippet">
+        <div class="capital" id="country-snippet4">
           Capital City: ${data[0].capital[0]}
         </div>
-        <div class="flag" id="country-snippet">
+        <div class="flag" id="country-snippet5">
           <div class="flag-container">
             <img src="${data[0].flags.png}" alt="" style="height: 120px; width: 200px; border: 1px solid black;">
           </div>
@@ -54,6 +59,14 @@ getRandomCountryAndDataFromApi();
 
 let score = 5;
 let highScore = 0;
+let count = 0;
+
+const play = function() {
+  getRandomCountryAndDataFromApi;
+};
+
+
+
 
 document.querySelector('.guess-bar').addEventListener('change', function () {
   const guess = this.value;
