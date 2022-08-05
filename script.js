@@ -99,3 +99,6 @@ const reset = function () {
 };
 
 document.getElementById('reset-btn').addEventListener('click', reset);
+document.getElementById('rules-btn').addEventListener('click', function() {
+  alert("Here are the rules of the game");
+})
