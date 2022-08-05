@@ -28,18 +28,19 @@
       </div> -->
       <div class="btt">
         <button id="play-btn">⁉ Rules ⁉</button>
-        <button id="play-btn">Play Game</button>
+        <button id="reset-btn">Reset</button>
       </div>
 
     </div>
     <div class="content">
       <div class="guess-box" style="border: 4px solid aqua; margin: 12px 0;">
-        <input type="text" class="guess-bar" placeholder="Guess the country">
+        <input type="text" id="guess" onfocus="this.value=''" class="guess-bar" placeholder="Guess the country">
+        <button type="submit">Submit</button>
       </div>
       <div class="results" style="border: 3px solid yellowgreen;">
-        Incorrect Guess: Try Again
+        <!-- Incorrect Guess: Try Again -->
       </div>
-      <div class="country-card">
+      <div class="country-card" id="cc">
         <!-- <div class="population" id="country-snippet">
           Population: 20 million
         </div>
@@ -61,7 +62,7 @@
     </div>
     <div class="scores" style="border: 2px solid green;">
       <div class="score" id="current-score">
-        Current Score:
+        Current Score: 0
       </div>
       <div class="score" id="high-score">
         High-score:

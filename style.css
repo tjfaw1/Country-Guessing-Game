@@ -59,7 +59,7 @@ body {
 }
 
 #country-snippet {
-  margin: 3%;
+  /* margin: 3%; */
 }
 
 .content {
@@ -95,7 +95,9 @@ body {
   background-color: #EFEFEF;
 }
 
-
+.results {
+  opacity: 0;
+}
 
 
 
