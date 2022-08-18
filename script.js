@@ -131,7 +131,7 @@ const getRandomCountryAndDataFromApi = function () {
 
 let score = 5;
 let highScore = 0;
-let count = 0;
+let count = 1;
 
 const successfullGuess = function () {
   document.querySelector('.results').style.opacity = 1;
@@ -150,6 +150,19 @@ const successfullGuess = function () {
     };
 };
 
+const unsuccessfullGuess = function () {
+  // count ++;
+  document.querySelector('.results').style.opacity = 1;
+  document.querySelector('.results').textContent = 'Wrong Guess! Try Again';
+  score--;
+  document.querySelector('#current-score').textContent = `Current Score: ${score}`;
+  document.querySelector('.results').style.backgroundColor = 'red';
+  document.querySelector('.results').style.color = 'white';
+  document.querySelector('.results').style.fontSize = 'larger';
+  document.querySelector('.results').style.fontWeight = 'bolder';
+  // this.value = "";
+}
+
 const begin = function () {
   document.getElementById('play-btn').addEventListener('click', function () {
     getRandomCountryAndDataFromApi();
@@ -161,15 +174,27 @@ const begin = function () {
   })
 }
 
+// const play = function () {
+
+
+
+//   document.querySelector('.guess-bar').addEventListener('change', function () {
+//     for (let i = 1; i >= 5; i++) {
+
+//       // if (guesss === randomCountry[0])
+//     }
+//   })
+// }
 
 const play = function () {
   document.querySelector('.guess-bar').addEventListener('change', function () {
   const guess = this.value;
-  if (guess == randomCountry[0]) {
+    if(guess.toLowerCase() === randomCountry[0].toLowerCase()){
       successfullGuess();
-    }
-  console.log(randomCountry);
-  // console.log(`${randomCountry} is the random country`);
+  } if(guess.toLowerCase() != randomCountry[0].toLowerCase() && count == 1){
+      unsuccessfullGuess();
+      this.value = "";
+  }
 });
 }
 
