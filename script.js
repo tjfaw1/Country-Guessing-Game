@@ -186,17 +186,44 @@ const begin = function () {
 //   })
 // }
 
+
 const play = function () {
   document.querySelector('.guess-bar').addEventListener('change', function () {
   const guess = this.value;
     if(guess.toLowerCase() === randomCountry[0].toLowerCase()){
-      successfullGuess();
-  } if(guess.toLowerCase() != randomCountry[0].toLowerCase() && count == 1){
+      successfullGuess();};
+    if(guess.toLowerCase() != randomCountry[0].toLowerCase() && count === 1){
       unsuccessfullGuess();
       this.value = "";
-  }
+      document.querySelector('#country-snippet2').style.opacity = 1;
+      count ++;
+    };
+
+
+  // if(guess.toLowerCase() != randomCountry[0].toLowerCase() && count == 1){
+  //     unsuccessfullGuess();
+  //     this.value = "";
+  //     document.querySelector('#country-snippet2').style.opacity = 1;
+  // }
 });
+
+
 }
+
+// const attempt1 = function () {
+//   document.querySelector('.guess-bar').addEventListener('change', function () {
+//     const guess = this.value;
+//   })
+// }
+
+
+// const play = function () {
+//   attempt1()
+//   attempt2()
+//   attempt3()
+//   attempt4()
+//   attempt5()
+// }
 
 begin();
 play();
