@@ -227,7 +227,7 @@ const checkGuess = function (guesses) {
     if (count > 4) {
       document.querySelector(
         ".results"
-      ).textContent = `No More Attempts. You Lose!! Correct Answer is ${randomCountry[0]}`;
+      ).textContent = `Attemps Expired. Correct Answer is ${randomCountry[0]}`;
     }
   });
 };
