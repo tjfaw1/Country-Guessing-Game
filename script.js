@@ -150,12 +150,12 @@ const successfullGuess = function () {
   document.querySelector("#country-snippet3").style.opacity = 1;
   document.querySelector("#country-snippet4").style.opacity = 1;
   document.querySelector("#country-snippet5").style.opacity = 1;
-  if (score > highScore) {
-    highScore = score;
-    document.querySelector(
-      "#high-score"
-    ).textContent = `High Score: ${highScore}`;
-  }
+  // if (score > highScore) {
+  //   highScore = score;
+  //   document.querySelector(
+  //     "#high-score"
+  //   ).textContent = `High Score: ${highScore}`;
+  // }
 };
 
 const unsuccessfullGuess = function () {
@@ -172,7 +172,7 @@ const unsuccessfullGuess = function () {
   document.querySelector(".results").style.fontWeight = "bolder";
   document.getElementById(
     "wrong-guesses"
-  ).innerHTML = `<li>${incorrectGuesses}</li>`;
+  ).innerHTML = `<li> ${incorrectGuesses}</li>`;
 };
 
 const begin = function () {
@@ -181,10 +181,11 @@ const begin = function () {
     countriesCard.style.opacity = 1;
     document.querySelector(".content").style.opacity = 1;
     document.querySelector(".guess-box").style.opacity = 1;
-    document.querySelector(".scores").style.opacity = 1;
+    // document.querySelector(".scores").style.opacity = 1;
     document.querySelector(".incorrect-guesses").style.opacity = 1;
-    document.querySelector("#play-btn").style.padding = "5px 15px";
-    document.querySelector("#play-btn").innerHTML = "Reset";
+    document.querySelector("#play-btn").style.opacity = 0;
+    document.querySelector("#reset-btn").style.opacity = 1;
+    // document.querySelector("#play-btn").innerHTML = "Reset";
   });
 };
 
@@ -227,6 +228,10 @@ const checkGuess = function (guesses) {
 const play = function () {
   checkGuess(count);
 };
+
+document.querySelector("#reset-btn").addEventListener("click", function () {
+  location.reload();
+});
 
 begin();
 play();
