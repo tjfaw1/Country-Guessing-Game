@@ -1,7 +1,6 @@
 body {
  sans-serif;
   color: #555;
-  /* background-color: #f7f7f7; */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -166,7 +165,6 @@ input {
   width: fit-content;
   text-align: center;
   color: hotpink;
-  border: 2px solid hotpink;
   border-radius: 33px;
   font-size: calc(18px + 0.390625vw);
   font-weight: 600;
@@ -179,7 +177,9 @@ input {
   text-align: center;
   margin: 4% 0;
   font-size: calc(12px + 0.390625vw);
-
+  background-color: rgba(255, 255, 255, 0.432);
+  border-radius: 33px;
+  padding: 2px 12px;
   /* background-color: yellow; */
 }
 

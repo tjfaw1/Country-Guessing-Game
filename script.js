@@ -7,6 +7,7 @@ const message = document.querySelector(".results").textContent;
 let randomCountry = [];
 let country;
 let incorrectGuesses = [];
+
 const getRandomCountryAndDataFromApi = function () {
   fetch("https://restcountries.com/v3.1/all")
     .then((response) => response.json())
@@ -76,6 +77,7 @@ const successfullGuess = function () {
     count > 1 ? "attempts" : "attempt"
   }`;
   document.querySelector(".results").style.backgroundColor = "#60b347";
+  // document.querySelector(".results").style.border = "2px, solid, white";
   document.querySelector(".results").style.color = "white";
   document.querySelector(".results").style.fontSize = "larger";
   document.querySelector(".results").style.fontWeight = "bolder";
@@ -87,9 +89,11 @@ const successfullGuess = function () {
 
 const unsuccessfullGuess = function () {
   // count ++;
+  document.querySelector(".incorrect-guesses").style.opacity = 1;
   document.querySelector(".results").style.opacity = 1;
   document.querySelector(".results").textContent = "Wrong Guess! Try Again";
   score--;
+  // CLEAR INPUT FIELD
   // document.querySelector(
   //   "#current-score"
   // ).textContent = `Current Score: ${score}`;
@@ -110,7 +114,6 @@ const begin = function () {
       document.querySelector(".content").style.opacity = 1;
       document.querySelector(".guess-box").style.opacity = 1;
       // document.querySelector(".scores").style.opacity = 1;
-      document.querySelector(".incorrect-guesses").style.opacity = 1;
       document.querySelector("#play-btn").style.opacity = 0;
       document.querySelector("#reset-btn").style.opacity = 1;
       // document.querySelector("#play-btn").innerHTML = "Reset";
@@ -127,8 +130,8 @@ const checkGuess = function (guesses) {
     if (guess.toLowerCase() != randomCountry[0].toLowerCase()) {
       incorrectGuesses.push(guess);
       console.log(incorrectGuesses);
-      unsuccessfullGuess();
       guess = "";
+      unsuccessfullGuess();
       document.querySelector(`#country-snippet${count + 1}`).style.opacity = 1;
       count++;
     }
