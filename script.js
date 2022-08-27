@@ -4,7 +4,6 @@ const introBox = document.querySelector(".intro");
 const guess = document.querySelector(".guess-bar").value;
 const message = document.querySelector(".results").textContent;
 
-// const delayInMilliseconds = 3000;
 let randomCountry = [];
 let country;
 let incorrectGuesses = [];
@@ -58,77 +57,6 @@ const getRandomCountryAndDataFromApi = function () {
     });
 };
 
-// // getRandomCountryAndDataFromApi();
-
-// // const play = function () {
-// //   getRandomCountryWithData();
-// //   countriesCard.style.opacity = 1;
-// // };
-
-// // document.getElementById('play-btn').addEventListener('click', play);
-
-// let score = 5;
-// let highScore = 0;
-// let count = 0;
-
-// // const play = function() {
-// //   getRandomCountryAndDataFromApi;
-// // };
-
-// document.querySelector('.guess-bar').addEventListener('change', function () {
-// const guess = this.value;
-// if (guess == randomCountry) {
-//   document.querySelector('.results').style.opacity = 1;
-//   document.querySelector('.results').textContent = `Correct Guess! You got it in ${score} hits`;
-//   document.querySelector('.results').style.backgroundColor = '#60b347';
-//   document.querySelector('.results').style.color = 'white';
-//   document.querySelector('.results').style.fontSize = 'larger';
-//   document.querySelector('.results').style.fontWeight = 'bolder';
-
-//   if(score > highScore){
-//     highScore = score;
-//     document.querySelector('#high-score').textContent = `High Score: ${highScore}`;
-//   }
-
-// } else {
-//     this.value = "";
-//       while(score > 0){
-//         console.log(`testing ${score}`);
-//         document.querySelector(`#country-snippet${score}`).style.opacity = 1
-//         score --;
-//       }
-//       // for(let i = 5; i < 1; i --){
-//       //   console.log('is this even working');
-//       //   // document.querySelector(`#country-snippet${i}`).style.opacity = 1;
-//       //   score --
-//       // };
-
-//     if(score >= 1) {
-//       document.querySelector('.results').style.opacity = 1;
-//       document.querySelector('.results').textContent = 'Wrong Guess! Try Again';
-//       score--;
-//       document.querySelector('#current-score').textContent = `Current Score: ${score}`;
-//     } else {
-//       document.querySelector('.results').textContent = 'Game Over, You Lost!';
-//     }
-//     document.querySelector('.results').style.backgroundColor = 'red';
-//     document.querySelector('.results').style.color = 'white';
-//     document.querySelector('.results').style.fontSize = 'larger';
-//     document.querySelector('.results').style.fontWeight = 'bolder';
-//   }
-//   console.log(guess);
-//   console.log(`${randomCountry} is the random country`);
-// });
-
-// const reset = function () {
-//   score = 5;
-//   document.querySelector('#current-score').textContent = `Current Score: ${score}`;
-//   document.querySelector('.results').style.opacity = 0;
-//   document.getElementById('cc').innerHTML = ""
-//   getRandomCountryAndDataFromApi();
-//   // location.reload();
-// };
-
 // document.getElementById('reset-btn').addEventListener('click', reset);
 document.getElementById("rules-btn").addEventListener("click", function () {
   alert(
@@ -155,12 +83,6 @@ const successfullGuess = function () {
   document.querySelector("#country-snippet3").style.opacity = 1;
   document.querySelector("#country-snippet4").style.opacity = 1;
   document.querySelector("#country-snippet5").style.opacity = 1;
-  // if (score > highScore) {
-  //   highScore = score;
-  //   document.querySelector(
-  //     "#high-score"
-  //   ).textContent = `High Score: ${highScore}`;
-  // }
 };
 
 const unsuccessfullGuess = function () {
@@ -192,23 +114,9 @@ const begin = function () {
       document.querySelector("#play-btn").style.opacity = 0;
       document.querySelector("#reset-btn").style.opacity = 1;
       // document.querySelector("#play-btn").innerHTML = "Reset";
-    }, 3000);
+    }, 1750);
   });
 };
-
-// const play = function () {
-
-//   document.querySelector('.guess-bar').addEventListener('change', function () {
-//     for (let i = 1; i >= 5; i++) {
-
-//       // if (guesss === randomCountry[0])
-//     }
-//   })
-// }
-
-// const expiredAttempts () {
-
-// }
 
 const checkGuess = function (guesses) {
   document.querySelector(".guess-bar").addEventListener("change", function () {
