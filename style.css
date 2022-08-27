@@ -119,11 +119,11 @@ body {
   margin: 0;
 }
 
-.incorrect-guesses li {
+li {
   display: inline;
   text-decoration: line-through;
-  padding: 0 12px;
-  opacity: 0;
+  padding: 0 120px;
+  /* opacity: 0; */
 }
 
 .guess-box {

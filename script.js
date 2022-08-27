@@ -140,7 +140,7 @@ const successfullGuess = function () {
   document.querySelector(
     ".results"
   ).textContent = `Correct Guess! You got it in ${count} ${
-    count > 1 ? "goes" : "go"
+    count > 1 ? "attempts" : "attempt"
   }`;
   document.querySelector(".results").style.backgroundColor = "#60b347";
   document.querySelector(".results").style.color = "white";
@@ -170,7 +170,9 @@ const unsuccessfullGuess = function () {
   document.querySelector(".results").style.color = "white";
   document.querySelector(".results").style.fontSize = "larger";
   document.querySelector(".results").style.fontWeight = "bolder";
-  // this.value = "";
+  document.getElementById(
+    "wrong-guesses"
+  ).innerHTML = `<li>${incorrectGuesses}</li>`;
 };
 
 const begin = function () {
@@ -180,6 +182,7 @@ const begin = function () {
     document.querySelector(".content").style.opacity = 1;
     document.querySelector(".guess-box").style.opacity = 1;
     document.querySelector(".scores").style.opacity = 1;
+    document.querySelector(".incorrect-guesses").style.opacity = 1;
     document.querySelector("#play-btn").style.padding = "5px 15px";
     document.querySelector("#play-btn").innerHTML = "Reset";
   });
@@ -195,6 +198,10 @@ const begin = function () {
 //   })
 // }
 
+// const expiredAttempts () {
+
+// }
+
 const checkGuess = function (guesses) {
   document.querySelector(".guess-bar").addEventListener("change", function () {
     let guess = this.value;
@@ -208,7 +215,11 @@ const checkGuess = function (guesses) {
       guess = "";
       document.querySelector(`#country-snippet${count + 1}`).style.opacity = 1;
       count++;
-      console.log(count);
+    }
+    if (count > 4) {
+      document.querySelector(
+        ".results"
+      ).textContent = `No More Attempts. You Lose!! Correct Answer is ${randomCountry[0]}`;
     }
   });
 };
