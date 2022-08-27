@@ -4,6 +4,7 @@ const introBox = document.querySelector(".intro");
 const guess = document.querySelector(".guess-bar").value;
 const message = document.querySelector(".results").textContent;
 
+// const delayInMilliseconds = 3000;
 let randomCountry = [];
 let country;
 let incorrectGuesses = [];
@@ -31,16 +32,18 @@ const getRandomCountryAndDataFromApi = function () {
       randomCountry.push(data[0].capital[0]);
       const html = `
         <div class="population" id="country-snippet1">
-          Population: ${(+data[0].population / 1000000).toFixed(2) + " million"}
+          <b>Population:</b> ${
+            (+data[0].population / 1000000).toFixed(2) + " million"
+          }
         </div>
         <div class="size" id="country-snippet2">
-          Land Size: ${Number(data[0].area).toLocaleString() + " km²"}
+          <b>Land Size:</b> ${Number(data[0].area).toLocaleString() + " km²"}
         </div>
         <div class="continent" id="country-snippet3">
-          Continent: ${data[0].continents[0]}
+          <b>Continent:</b> ${data[0].continents[0]}
         </div>
         <div class="capital" id="country-snippet4">
-          Capital City: ${data[0].capital[0]}
+          <b>Capital City:</b> ${data[0].capital[0]}
         </div>
         <div class="flag" id="country-snippet5">
           <div class="flag-container">
@@ -127,9 +130,9 @@ const getRandomCountryAndDataFromApi = function () {
 // };
 
 // document.getElementById('reset-btn').addEventListener('click', reset);
-// document.getElementById('rules-btn').addEventListener('click', function() {
-//   alert("Here are the rules of the game");
-// })
+document.getElementById("rules-btn").addEventListener("click", function () {
+  alert("Here are the rules of the game");
+});
 
 let score = 5;
 let highScore = 0;
@@ -139,7 +142,7 @@ const successfullGuess = function () {
   document.querySelector(".results").style.opacity = 1;
   document.querySelector(
     ".results"
-  ).textContent = `Correct Guess! You got it in ${count} ${
+  ).textContent = `Correct! You got it in ${count} ${
     count > 1 ? "attempts" : "attempt"
   }`;
   document.querySelector(".results").style.backgroundColor = "#60b347";
@@ -163,29 +166,31 @@ const unsuccessfullGuess = function () {
   document.querySelector(".results").style.opacity = 1;
   document.querySelector(".results").textContent = "Wrong Guess! Try Again";
   score--;
-  document.querySelector(
-    "#current-score"
-  ).textContent = `Current Score: ${score}`;
-  document.querySelector(".results").style.backgroundColor = "red";
+  // document.querySelector(
+  //   "#current-score"
+  // ).textContent = `Current Score: ${score}`;
+  document.querySelector(".results").style.backgroundColor = "#FA6161";
   document.querySelector(".results").style.color = "white";
   document.querySelector(".results").style.fontSize = "larger";
   document.querySelector(".results").style.fontWeight = "bolder";
   document.getElementById(
     "wrong-guesses"
-  ).innerHTML = `<li> ${incorrectGuesses}</li>`;
+  ).innerHTML = `<div> ❌${incorrectGuesses}❌</div>`;
 };
 
 const begin = function () {
   document.getElementById("play-btn").addEventListener("click", function () {
     getRandomCountryAndDataFromApi();
-    countriesCard.style.opacity = 1;
-    document.querySelector(".content").style.opacity = 1;
-    document.querySelector(".guess-box").style.opacity = 1;
-    // document.querySelector(".scores").style.opacity = 1;
-    document.querySelector(".incorrect-guesses").style.opacity = 1;
-    document.querySelector("#play-btn").style.opacity = 0;
-    document.querySelector("#reset-btn").style.opacity = 1;
-    // document.querySelector("#play-btn").innerHTML = "Reset";
+    setTimeout(function () {
+      countriesCard.style.opacity = 1;
+      document.querySelector(".content").style.opacity = 1;
+      document.querySelector(".guess-box").style.opacity = 1;
+      // document.querySelector(".scores").style.opacity = 1;
+      document.querySelector(".incorrect-guesses").style.opacity = 1;
+      document.querySelector("#play-btn").style.opacity = 0;
+      document.querySelector("#reset-btn").style.opacity = 1;
+      // document.querySelector("#play-btn").innerHTML = "Reset";
+    }, 3000);
   });
 };
 
