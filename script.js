@@ -131,7 +131,9 @@ const getRandomCountryAndDataFromApi = function () {
 
 // document.getElementById('reset-btn').addEventListener('click', reset);
 document.getElementById("rules-btn").addEventListener("click", function () {
-  alert("Here are the rules of the game");
+  alert(
+    "Test Your Geography Knowledge!\n- You get 4 guesses to pick the correct country\n- New information is revealed after each wrong guess\n- Good Luck!"
+  );
 });
 
 let score = 5;
