@@ -83,8 +83,8 @@ const successfullGuess = function () {
   document.querySelector(".results").style.fontWeight = "bolder";
   document.querySelector("#country-snippet2").style.opacity = 1;
   document.querySelector("#country-snippet3").style.opacity = 1;
-  document.querySelector("#country-snippet5").style.opacity = 1;
   document.querySelector("#country-snippet4").style.opacity = 1;
+  document.querySelector("#country-snippet5").style.opacity = 1;
 };
 
 const unsuccessfullGuess = function () {
@@ -135,7 +135,7 @@ const checkGuess = function (guesses) {
       document.querySelector(`#country-snippet${count + 1}`).style.opacity = 1;
       count++;
     }
-    if (count > 5) {
+    if (count > 4) {
       document.querySelector(
         ".results"
       ).textContent = `Attemps Expired. Correct Answer is ${randomCountry[0]}`;
