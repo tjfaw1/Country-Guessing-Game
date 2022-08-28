@@ -135,7 +135,7 @@ const checkGuess = function (guesses) {
       document.querySelector(`#country-snippet${count + 1}`).style.opacity = 1;
       count++;
     }
-    if (count > 4) {
+    if (count > 5) {
       document.querySelector(
         ".results"
       ).textContent = `Attemps Expired. Correct Answer is ${randomCountry[0]}`;
