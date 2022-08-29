@@ -210,7 +210,8 @@ li {
 #country-snippet2,
 #country-snippet3,
 #country-snippet4,
-#country-snippet5 {
+#country-snippet5,
+#country-snippet6 {
   opacity: 0;
   margin: 1% 0;
   transition: opacity 2s, transform 4s;

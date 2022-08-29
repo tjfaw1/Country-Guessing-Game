@@ -52,6 +52,8 @@ const getRandomCountryAndDataFromApi = function () {
             }" alt="" style="height: 120px; width: 200px; border: 1px solid black;">
           </div>
         </div>
+        <div class="empty" id="country-snippet6">
+        </div>
       `;
       countriesCard.insertAdjacentHTML("beforeend", html);
       // document.querySelector('.results').style.opacity = 1;
@@ -129,13 +131,13 @@ const checkGuess = function (guesses) {
     }
     if (guess.toLowerCase() != randomCountry[0].toLowerCase()) {
       incorrectGuesses.push(guess);
-      console.log(incorrectGuesses);
+      console.log(count);
       guess = "";
       unsuccessfullGuess();
       document.querySelector(`#country-snippet${count + 1}`).style.opacity = 1;
       count++;
     }
-    if (count > 4) {
+    if (count > 5) {
       document.querySelector(
         ".results"
       ).textContent = `Attemps Expired. Correct Answer is ${randomCountry[0]}`;
