@@ -40,10 +40,10 @@ const getRandomCountryAndDataFromApi = function () {
         <div class="continent" id="country-snippet3">
           <b>Continent:</b> ${data[0].continents[0]}
         </div>
-        <div class="capital" id="country-snippet4">
+        <div class="capital" id="country-snippet5">
           <b>Capital City:</b> ${data[0].capital[0]}
         </div>
-        <div class="flag" id="country-snippet5">
+        <div class="flag" id="country-snippet4">
           <div class="flag-container">
             <img src="${
               data[0].flags.png
