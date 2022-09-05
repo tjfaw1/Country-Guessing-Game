@@ -123,7 +123,8 @@ const begin = function () {
 
 const checkGuess = function (guesses) {
   document.querySelector(".guess-bar").addEventListener("change", function () {
-    let guess = this.value;
+    let guess = this.value.trim();
+    console.log(guess.length);
     if (guess.toLowerCase() === randomCountry[0].toLowerCase()) {
       successfullGuess();
     }
