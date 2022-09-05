@@ -1,5 +1,4 @@
 body {
- sans-serif;
   color: #555;
   min-height: 100vh;
   display: flex;
@@ -10,7 +9,7 @@ body {
 }
 
 .container {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -222,17 +221,17 @@ li {
 }
 
 @media only screen and (max-width: 325px) {
+  #rules-btn,
+  #play-btn,
+  #reset-btn {
+    padding: 5px 15px;
+  }
 
-   #rules-btn, #play-btn, #reset-btn {
-      padding: 5px 15px;
-   }
-
-   .container h1 {
+  .container h1 {
     font-size: 1.8em;
-   }
+  }
 
-   .guess-box {
+  .guess-box {
     margin: 9% 3% 0 3%;
-   }
-
+  }
 }

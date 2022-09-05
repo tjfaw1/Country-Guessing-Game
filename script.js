@@ -8,6 +8,8 @@ let randomCountry = [];
 let country;
 let incorrectGuesses = [];
 
+const formatter = Intl.NumberFormat("en", { notation: "compact" });
+
 const getRandomCountryAndDataFromApi = function () {
   fetch("https://restcountries.com/v3.1/all")
     .then((response) => response.json())
@@ -23,18 +25,14 @@ const getRandomCountryAndDataFromApi = function () {
     .then((response) => response.json())
     .then(function (data) {
       randomCountry.push(data[0].name.common);
-      randomCountry.push(
-        (+data[0].population / 1000000).toFixed(2) + " million"
-      );
+      randomCountry.push(formatter.format(+data[0].population));
       randomCountry.push(Number(data[0].area).toLocaleString() + " km²");
       randomCountry.push(data[0].continents[0]);
       // randomCountry.push(data[0].capital[0]);
       randomCountry.push(data[0].capital[0]);
       const html = `
         <div class="population" id="country-snippet1">
-          <b>Population:</b> ${
-            (+data[0].population / 1000000).toFixed(2) + " million"
-          }
+          <b>Population:</b> ${formatter.format(+data[0].population)}
         </div>
         <div class="size" id="country-snippet2">
           <b>Land Size:</b> ${Number(data[0].area).toLocaleString() + " km²"}
